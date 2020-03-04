@@ -1,0 +1,58 @@
+<html>
+    <head>
+
+        <title> My Website</title>
+
+    </head>
+    <body>
+        <h1 >Tasks</h1>
+        <ul id="tasks">
+
+        </ul>
+        <form id="new-task">
+            <input type="text" autocomplete="off" autofocus placeholder="New Task" id="task">
+       <input type="submit" >
+        </form>
+
+        <script>
+           window.addEventListener('load',function(event){
+               //by default submit button is disabled
+            document.querySelector('#submit').disabled= true;
+
+            //Enable button only if there is text in the input field
+            document.querySelector('#task').onkeyup = () =>{
+                document.querySelector('#submit').disabled = false;
+
+            };
+
+            document.querySelector('#new-task').onsubmit =() =>{
+
+                //create new item for list
+                const lid= document.createElement('li');
+                lid.innerHTML = document.querySelector('#task').value;
+
+                //Add new item to the task list
+                document.querySelector('#tasks').append(li);
+
+                //clear input field and disable button again
+
+                document.querySelector('#task').value = '';
+                document.querySelector('#submit').disabled = true;
+
+                //stop form from submitting
+                return false;
+
+            };
+           });
+
+
+
+             // window.addEventListener("load", function(event) {
+             //   console.log("Toutes les ressources sont chargées !");
+             // });
+
+
+         </script>
+    </body>
+
+</html>
