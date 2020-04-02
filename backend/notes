@@ -1,0 +1,19 @@
+
+After creating the backend folder, cd backend:
+Prerequisites
+$npm init -y
+$ npm install express --save
+$npm install --save-dev @babel/core @babel/node @babel/preset-env
+
+
+Then create this file inside src folder: ".babelrc"
+Inside ".bablerc" file write this and save:
+{
+    "presets": ["@babel/preset-env"]
+}
+
+To run our express application:
+$npx babel-node src/server.js 
+
+For being able to use json data in our code:
+$npm install --save body-parser
